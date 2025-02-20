@@ -32,7 +32,6 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 class FollowViewSet(
     mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet
 ):
-    queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     filter_backends = (filters.SearchFilter,)
     search_fields = ("following__username",)
